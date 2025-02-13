@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6826932901949946920}
   - component: {fileID: 7042268074386378665}
   m_Layer: 0
-  m_Name: Pin1
+  m_Name: Pin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
