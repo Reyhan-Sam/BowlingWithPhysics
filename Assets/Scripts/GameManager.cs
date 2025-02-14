@@ -1,0 +1,33 @@
+using TMPro;
+using UnityEngine;
+using UnityEngine.Events;
+public class GameManager : MonoBehaviour
+{
+    [SerializeField] private float score = 0;
+    [SerializeField] private TextMeshProUGUI scoreText;
+    private FallTrigger[] pins;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private void Start()
+    {
+//        pins = FindObjectsByType<FallTrigger>(FindObjectsInactive.Include);
+        pins = FindObjectsByType<FallTrigger>(FindObjectsSortMode.None);
+
+        foreach (FallTrigger pin in pins)
+        {
+            pin.OnPinFall.AddListener(IncrementScore);
+        }
+    }
+
+    private void IncrementScore()
+    {
+        score++;
+        scoreText.text = $"Score: {score}";
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
