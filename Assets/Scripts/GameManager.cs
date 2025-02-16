@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform pinAnchor;
     [SerializeField] private InputManager inputManager;
     private FallTrigger[] FallTriggers;
-    private FallTrigger[] pins;
     private GameObject pinObjects;
 
     
@@ -19,12 +18,12 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
        // pins = FindObjectsByType<FallTrigger>(FindObjectsInactive.Include);
-        pins = FindObjectsByType<FallTrigger>(FindObjectsSortMode.None);
+        // pins = FindObjectsByType<FallTrigger>(FindObjectsSortMode.None);
 
-        foreach (FallTrigger pin in pins)
-        {
-            pin.OnPinFall.AddListener(IncrementScore);
-        }
+        // foreach (FallTrigger pin in pins)
+        // {
+        //     pin.OnPinFall.AddListener(IncrementScore);
+        // }
         inputManager.OnResetPressed.AddListener(HandleReset);
         SetPins();
     }
